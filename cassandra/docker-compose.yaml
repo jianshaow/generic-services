@@ -1,0 +1,12 @@
+version: "3"
+services:
+  cassandra:
+    image: cassandra:${image_ver}
+    container_name: cassandra
+    restart: unless-stopped
+    # environment:
+    #   - OLLAMA_MAX_LOADED_MODELS=${OLLAMA_MAX_LOADED_MODELS}
+    # volumes:
+    #   - ${data_path}:/var/lib/cassandra
+    ports:
+      - 9042:9042
