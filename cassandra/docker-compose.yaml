@@ -4,8 +4,9 @@ services:
     image: cassandra:${image_ver}
     container_name: cassandra
     restart: unless-stopped
-    # environment:
-    #   - 
+    environment:
+      - MAX_HEAP_SIZE=200M
+      - MAX_HEAP_SIZE=1G
     # volumes:
     #   - ${data_path}:/var/lib/cassandra
     ports:
