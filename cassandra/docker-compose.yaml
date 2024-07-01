@@ -5,7 +5,7 @@ services:
     container_name: cassandra
     restart: unless-stopped
     environment:
-      - MAX_HEAP_SIZE=200M
+      - HEAP_NEWSIZE=200M
       - MAX_HEAP_SIZE=1G
     # volumes:
     #   - ${data_path}:/var/lib/cassandra
