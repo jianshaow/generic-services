@@ -6,7 +6,8 @@ services:
     restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=password
-    # volumes:
-    #   - ${data_path}:/var/lib/mariadb
+    volumes:
+      - ${data_path}:/var/lib/mysql
+      - ${log_path}:/var/log/mysql
     ports:
       - 3306:3306
