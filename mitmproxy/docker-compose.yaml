@@ -1,0 +1,10 @@
+version: "3"
+services:
+  mitmproxy:
+    image: mitmproxy/mitmproxy:${image_ver}
+    container_name: mitmproxy
+    restart: unless-stopped
+    command: "mitmweb --web-host 0.0.0.0"
+    ports:
+      - 48080:8080
+      - 48081:8081
