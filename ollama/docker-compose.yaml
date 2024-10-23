@@ -1,0 +1,20 @@
+version: "3"
+services:
+  ollama:
+    image: jianshao/ollama-server:${ollama_image_tag}
+    container_name: ollama-server
+    restart: unless-stopped
+    volumes:
+      - ${model_cache_path}:/home/devel/.ollama
+    ports:
+      - 11434:11434
+  nextchat:
+    image: yidadaa/chatgpt-next-web:${nextchat_image_tag}
+    container_name: nextchat
+    restart: unless-stopped
+    depends_on:
+      - ollama
+    environment:
+      - BASE_URL=http://ollama:11434
+    ports:
+      - 3000:3000
