@@ -1,4 +1,3 @@
-version: "3"
 services:
   ollama:
     image: jianshao/ollama-server:${ollama_image_tag}

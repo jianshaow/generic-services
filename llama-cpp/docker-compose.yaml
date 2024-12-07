@@ -1,4 +1,3 @@
-version: "3"
 services:
   openai:
     image: jianshao/llama-cpp-server:${image_ver}
