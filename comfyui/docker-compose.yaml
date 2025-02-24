@@ -5,6 +5,7 @@ services:
     command: "python main.py --listen 0.0.0.0 --preview-method auto"
     restart: unless-stopped
     volumes:
+      - ${model_cache_path}:/home/devel/.cache
       - ${comfyui_root}:/home/devel/comfyui
     ports:
       - 8188:8188
