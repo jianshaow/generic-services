@@ -4,8 +4,12 @@ services:
     container_name: comfyui-server
     command: "python main.py --listen 0.0.0.0 --preview-method auto"
     restart: unless-stopped
+    environment:
+      - https_proxy=${https_proxy}
     volumes:
       - ${model_cache_path}:/home/devel/.cache
-      - ${comfyui_root}:/home/devel/comfyui
+      - ${comfyui_root}:/home/devel/comfyanonymous/ComfyUI
+      - ${comfyui_mgr_root}:/home/devel/ltdrdata/ComfyUI-Manager
+      - ${ipadapter_plus_root}:/home/devel/cubiq/ComfyUI_IPAdapter_plus
     ports:
       - 8188:8188
