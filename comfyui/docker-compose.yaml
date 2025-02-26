@@ -2,7 +2,7 @@ services:
   comfyui:
     image: jianshao/comfyui-rt:${comfyui_tag}
     container_name: comfyui-server
-    command: "python main.py --listen 0.0.0.0 --preview-method auto"
+    command: "python main.py --listen 0.0.0.0"
     restart: unless-stopped
     environment:
       - https_proxy=${https_proxy}
