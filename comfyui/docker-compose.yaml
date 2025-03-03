@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - https_proxy=${https_proxy}
+      - HF_HUB_ENABLE_HF_TRANSFER=1
     volumes:
       - ~/.ssh:/home/devel/.ssh
       - ${model_cache_path}:/home/devel/.cache
