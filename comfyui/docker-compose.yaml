@@ -9,6 +9,7 @@ services:
       - HF_HUB_ENABLE_HF_TRANSFER=1
     volumes:
       - ~/.ssh:/home/devel/.ssh
+      - ./install-models.sh:/home/devel/.local/bin/install-models.sh
       - ${model_cache_path}:/home/devel/.cache
       - ${comfyui_root}:/home/devel/comfyanonymous/ComfyUI
       - ${comfyui_mgr_root}:/home/devel/ltdrdata/ComfyUI-Manager
