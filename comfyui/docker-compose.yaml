@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - https_proxy=${https_proxy}
-      - HF_HUB_ENABLE_HF_TRANSFER=1
+      - HF_HUB_ENABLE_HF_TRANSFER=${HF_HUB_ENABLE_HF_TRANSFER}
     volumes:
       - ~/.ssh:/home/devel/.ssh
       - ./install-models.sh:/home/devel/.local/bin/install-models.sh
