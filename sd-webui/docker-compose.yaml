@@ -2,7 +2,7 @@ services:
   sd-webui:
     image: jianshao/sd-webui-rt:${sd_webui_tag}
     container_name: sd-webui-server
-    command: "python launch.py --listen"
+    command: "python launch.py --listen --xformers"
     restart: unless-stopped
     environment:
       - https_proxy=${https_proxy}
