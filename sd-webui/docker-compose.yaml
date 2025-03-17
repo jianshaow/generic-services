@@ -1,0 +1,16 @@
+services:
+  sd-webui:
+    image: jianshao/sd-webui-rt:${sd_webui_tag}
+    container_name: sd-webui-server
+    command: "python launch.py --listen"
+    restart: unless-stopped
+    environment:
+      - https_proxy=${https_proxy}
+      - HF_HUB_ENABLE_HF_TRANSFER=${HF_HUB_ENABLE_HF_TRANSFER}
+    volumes:
+      - ~/.ssh:/home/devel/.ssh
+      - ./install-models.sh:/home/devel/.local/bin/install-models.sh
+      - ${model_cache_path}:/home/devel/.cache
+      - ${sd_webui_root}:/home/devel/stable-diffusion-webui
+    ports:
+      - 7860:7860
