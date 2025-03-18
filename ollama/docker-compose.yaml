@@ -4,7 +4,7 @@ services:
     container_name: ollama-server
     restart: unless-stopped
     volumes:
-      - ${model_cache_path}:/home/devel/.ollama
+      - ${model_cache_path:-~/.ollama}:/home/devel/.ollama
     ports:
       - 11434:11434
   nextchat:

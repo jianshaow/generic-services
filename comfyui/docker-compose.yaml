@@ -1,18 +1,18 @@
 services:
   comfyui:
-    image: jianshao/comfyui-rt:${comfyui_tag}
+    image: jianshao/comfyui-rt:${image_tag}
     container_name: comfyui-server
     command: "python main.py --listen 0.0.0.0"
     restart: unless-stopped
     environment:
-      - https_proxy=${https_proxy}
-      - HF_HUB_ENABLE_HF_TRANSFER=${HF_HUB_ENABLE_HF_TRANSFER}
+      - https_proxy=${https_proxy:-}
+      - HF_HUB_ENABLE_HF_TRANSFER=${HF_HUB_ENABLE_HF_TRANSFER:-0}
     volumes:
       - ~/.ssh:/home/devel/.ssh
-      - ./install-models.sh:/home/devel/.local/bin/install-models.sh
-      - ${model_cache_path}:/home/devel/.cache
+      - ${model_cache_path:-~/.cache}:/home/devel/.cache
       - ${comfyui_root}:/home/devel/comfyanonymous/ComfyUI
       - ${comfyui_mgr_root}:/home/devel/ltdrdata/ComfyUI-Manager
       - ${ipadapter_plus_root}:/home/devel/cubiq/ComfyUI_IPAdapter_plus
+      - ./install-models.sh:/home/devel/.local/bin/install-models.sh
     ports:
       - 8188:8188

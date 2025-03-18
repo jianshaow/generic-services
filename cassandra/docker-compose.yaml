@@ -4,8 +4,8 @@ services:
     container_name: cassandra
     restart: unless-stopped
     environment:
-      - HEAP_NEWSIZE=${HEAP_NEWSIZE}
-      - MAX_HEAP_SIZE=${MAX_HEAP_SIZE}
+      - HEAP_NEWSIZE=${HEAP_NEWSIZE:-100M}
+      - MAX_HEAP_SIZE=${MAX_HEAP_SIZE:-512M}
     volumes:
       - ${data_path}:/var/lib/cassandra
       - ${log_path}:/var/log/cassandra
