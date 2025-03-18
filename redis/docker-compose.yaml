@@ -1,6 +1,6 @@
 services:
   redis:
-    image: redis:${image_ver}
+    image: valkey/valkey:${image_ver}
     container_name: redis
     restart: unless-stopped
     # environment:
