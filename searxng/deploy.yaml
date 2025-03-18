@@ -43,7 +43,7 @@ spec:
       volumes:
         - name: searxng-config
           hostPath:
-            path: ./searxng
+            path: ~/.searxng
             type: Directory
 ---
 apiVersion: v1
