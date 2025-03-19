@@ -3,4 +3,5 @@ server:
   secret_key: "changeit"
 search:
   formats:
+    - html
     - json

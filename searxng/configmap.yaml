@@ -4,6 +4,5 @@ metadata:
   name: env-cm
   namespace: searxng
 data:
-  # BASE_URL: https://localhost:8080/
   UWSGI_WORKERS: "2"
   UWSGI_THREADS: "2"
