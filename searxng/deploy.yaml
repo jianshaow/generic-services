@@ -43,19 +43,5 @@ spec:
       volumes:
         - name: searxng-config
           hostPath:
-            path: ~/.searxng
+            path: /usr/local/etc/searxng
             type: Directory
----
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: searxng
-  name: searxng
-spec:
-  type: ClusterIP
-  selector:
-    app: searxng
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080

@@ -42,17 +42,3 @@ spec:
           requests:
             storage: 256Mi
         storageClassName: retain-storage
----
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: generic
-  name: redis
-spec:
-  selector:
-    app: redis
-  ports:
-    - protocol: TCP
-      port: 6379
-      targetPort: 6379
-  clusterIP: None
