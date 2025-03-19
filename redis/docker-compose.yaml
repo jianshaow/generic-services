@@ -3,9 +3,9 @@ services:
     image: valkey/valkey:${image_ver}
     container_name: redis
     restart: unless-stopped
-    # environment:
-    #   - 
-    # volumes:
-    #   - ${data_path}:/var/lib/redis
+    volumes:
+      - valkey-data:/data
     ports:
       - 6379:6379
+volumes:
+  valkey-data:
