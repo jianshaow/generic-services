@@ -4,6 +4,7 @@ metadata:
   namespace: generic
   name: redis
 spec:
+  serviceName: redis
   replicas: 1
   selector:
     matchLabels:
