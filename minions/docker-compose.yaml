@@ -1,0 +1,15 @@
+services:
+  minions:
+    image: jianshao/minions:${image_tag}
+    container_name: minions-server
+    command: "streamlit run app.py"
+    restart: unless-stopped
+    environment:
+      - https_proxy=${https_proxy:-}
+      - OPENAI_BASE_URL=${OPENAI_API_BASE}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OLLAMA_HOST=${OLLAMA_HOST:-host.docker.internal}
+    ports:
+      - 8501:8501
+    extra_hosts:
+      - host.docker.internal:host-gateway
