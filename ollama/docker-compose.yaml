@@ -1,6 +1,6 @@
 services:
   ollama:
-    image: jianshao/ollama-server:${ollama_image_tag}
+    image: jianshao/ollama:${ollama_image_tag}
     container_name: ollama-server
     restart: unless-stopped
     volumes:
