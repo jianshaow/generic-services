@@ -11,7 +11,7 @@ services:
       - ~/.ssh:/home/devel/.ssh
       - ${model_cache_path:-~/.cache}:/home/devel/.cache
       - ${comfyui_root}:/home/devel/comfyanonymous/ComfyUI
-      - ${comfyui_mgr_root}:/home/devel/ltdrdata/ComfyUI-Manager
+      - ${comfyui_mgr_root}:/home/devel/Comfy-Org/ComfyUI-Manager
       - ${ipadapter_plus_root}:/home/devel/cubiq/ComfyUI_IPAdapter_plus
       - ./install-models.sh:/home/devel/.local/bin/install-models.sh
     ports:
