@@ -6,8 +6,8 @@ services:
       - python
       - launch.py 
       - --xformers
-      # - --listen
-    network_mode: host
+      - --listen
+    # network_mode: host
     restart: unless-stopped
     environment:
       - https_proxy=${https_proxy:-}
