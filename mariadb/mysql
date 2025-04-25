@@ -1,2 +1,2 @@
 #!/bin/bash
-docker-compose exec mariadb mariadb $*
+docker compose exec mariadb mariadb $*
