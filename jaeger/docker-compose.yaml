@@ -1,6 +1,6 @@
 services:
   jaeger:
-    image: jaegertracing/jaeger:${jaeger_image_tag:-latest}
+    image: jaegertracing/jaeger:${image_tag:-latest}
     container_name: jaeger
     restart: unless-stopped
     environment:
