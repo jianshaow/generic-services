@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     volumes:
       - ${model_cache_path:-~/.ollama}:/home/devel/.ollama
+    environment:
+      - https_proxy=${https_proxy:-}
     ports:
       - 11434:11434
   nextchat:
