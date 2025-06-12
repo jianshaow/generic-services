@@ -3,7 +3,13 @@ services:
     image: mitmproxy/mitmproxy:${image_ver}
     container_name: mitmproxy
     restart: unless-stopped
-    command: "mitmweb --web-host 0.0.0.0"
+    command: 
+      - mitmweb
+      - --no-web-open-browser
+      - --web-host
+      - 0.0.0.0
+      - --set
+      - web_password=${web_password}
     ports:
       - 48080:8080
       - 48081:8081
