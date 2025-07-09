@@ -4,7 +4,7 @@ services:
     container_name: ollama-server
     restart: unless-stopped
     volumes:
-      - ${model_cache_path:-~/.ollama}:/home/devel/.ollama
+      - ${model_cache_path:-~/.ollama}:/home/ubuntu/.ollama
     environment:
       - https_proxy=${https_proxy:-}
     ports:
