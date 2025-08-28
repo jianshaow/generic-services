@@ -2,6 +2,7 @@ services:
   ollama:
     image: jianshao/ollama:${ollama_image_tag}
     container_name: ollama-server
+    pull_policy: always
     restart: unless-stopped
     volumes:
       - ${model_cache_path:-~/.ollama}:/home/ubuntu/.ollama

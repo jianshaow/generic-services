@@ -2,8 +2,9 @@ services:
   comfyui:
     image: jianshao/comfyui-rt:${image_tag}
     container_name: comfyui-server
-    command: "python main.py --listen 0.0.0.0"
+    pull_policy: always
     restart: unless-stopped
+    command: "python main.py --listen 0.0.0.0"
     environment:
       - https_proxy=${https_proxy:-}
       - HF_HUB_ENABLE_HF_TRANSFER=${HF_HUB_ENABLE_HF_TRANSFER:-0}

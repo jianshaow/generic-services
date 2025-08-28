@@ -2,6 +2,7 @@ services:
   redis:
     image: valkey/valkey:${image_ver}
     container_name: redis
+    pull_policy: always
     restart: unless-stopped
     volumes:
       - valkey-data:/data

@@ -2,6 +2,7 @@ services:
   jaeger:
     image: jaegertracing/jaeger:${image_tag:-latest}
     container_name: jaeger
+    pull_policy: always
     restart: unless-stopped
     environment:
       - LOG_LEVEL=debug

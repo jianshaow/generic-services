@@ -1,7 +1,8 @@
 services:
   searxng:
     container_name: searxng
-    image: docker.io/searxng/searxng:latest
+    image: searxng/searxng:latest
+    pull_policy: always
     restart: unless-stopped
     ports:
       - 8080:8080

@@ -2,6 +2,7 @@ services:
   cassandra:
     image: cassandra:${image_ver}
     container_name: cassandra
+    pull_policy: always
     restart: unless-stopped
     environment:
       - HEAP_NEWSIZE=${HEAP_NEWSIZE:-100M}

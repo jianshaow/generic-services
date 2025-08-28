@@ -2,6 +2,7 @@ services:
   mariadb:
     image: mariadb:${image_ver}
     container_name: mariadb
+    pull_policy: always
     restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=password
