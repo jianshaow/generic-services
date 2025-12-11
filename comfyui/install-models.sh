@@ -9,7 +9,7 @@ hf_model_file=$2
 model_sub_path=$3
 model_target_file=$4
 
-hf_cache_path=$(huggingface-cli download ${hf_repo_id} ${hf_model_file})
+hf_cache_path=$(hf download ${hf_repo_id} ${hf_model_file})
 file_name=$(basename "$hf_cache_path")
 
 if [ -z "$model_target_file" ]; then
