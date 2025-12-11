@@ -7,13 +7,12 @@ services:
     command: "python main.py --listen 0.0.0.0"
     environment:
       - https_proxy=${https_proxy:-}
-      - HF_HUB_ENABLE_HF_TRANSFER=${HF_HUB_ENABLE_HF_TRANSFER:-0}
+      - HF_XET_HIGH_PERFORMANCE=${HF_XET_HIGH_PERFORMANCE:-1}
     volumes:
       - ~/.ssh:/home/devel/.ssh
       - ${model_cache_path:-~/.cache}:/home/devel/.cache
       - ${comfyui_root}:/home/devel/comfyanonymous/ComfyUI
       - ${comfyui_mgr_root}:/home/devel/Comfy-Org/ComfyUI-Manager
-      - ${ipadapter_plus_root}:/home/devel/cubiq/ComfyUI_IPAdapter_plus
       - ./install-models.sh:/home/devel/.local/bin/install-models.sh
     ports:
       - 8188:8188
