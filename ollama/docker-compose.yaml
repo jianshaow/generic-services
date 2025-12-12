@@ -11,13 +11,3 @@ services:
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
     ports:
       - 11434:11434
-  nextchat:
-    image: yidadaa/chatgpt-next-web:${nextchat_image_tag}
-    container_name: nextchat
-    restart: unless-stopped
-    depends_on:
-      - ollama
-    environment:
-      - BASE_URL=http://ollama:11434
-    ports:
-      - 13000:3000
