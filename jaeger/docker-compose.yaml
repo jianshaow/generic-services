@@ -1,7 +1,7 @@
 services:
-  jaeger:
+  server:
     image: jaegertracing/jaeger:${image_tag:-latest}
-    container_name: jaeger
+    hostname: jaeger
     pull_policy: always
     restart: unless-stopped
     environment:

@@ -1,7 +1,7 @@
 services:
-  ollama:
+  server:
     image: jianshao/ollama:${ollama_image_tag}
-    container_name: ollama-server
+    hostname: ollama-server
     pull_policy: always
     restart: unless-stopped
     volumes:

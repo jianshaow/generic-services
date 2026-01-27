@@ -1,7 +1,7 @@
 services:
-  minions:
+  server:
     image: jianshao/minions:${image_tag}
-    container_name: minions-server
+    hostname: minions-server
     command: "streamlit run app.py"
     restart: unless-stopped
     environment:

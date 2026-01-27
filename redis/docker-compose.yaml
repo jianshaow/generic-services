@@ -1,7 +1,7 @@
 services:
-  redis:
+  server:
     image: valkey/valkey:${image_ver}
-    container_name: redis
+    hostname: redis-server
     pull_policy: always
     restart: unless-stopped
     volumes:

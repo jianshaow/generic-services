@@ -1,7 +1,7 @@
 services:
-  mariadb:
+  server:
     image: mariadb:${image_ver}
-    container_name: mariadb
+    hostname: mariadb-server
     pull_policy: always
     restart: unless-stopped
     environment:

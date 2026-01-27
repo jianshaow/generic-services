@@ -1,7 +1,7 @@
 services:
-  mitmproxy:
+  server:
     image: mitmproxy/mitmproxy:${image_ver}
-    container_name: mitmproxy
+    hostname: mitmproxy-server
     pull_policy: always
     restart: unless-stopped
     command: 

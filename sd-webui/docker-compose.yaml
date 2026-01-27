@@ -1,13 +1,12 @@
 services:
-  sd-webui:
+  server:
     image: jianshao/sd-webui-rt:${image_tag}
-    container_name: sd-webui-server
+    hostname: sd-webui-server
     command:
       - python
       - launch.py 
       - --xformers
       - --listen
-    # network_mode: host
     restart: unless-stopped
     environment:
       - https_proxy=${https_proxy:-}

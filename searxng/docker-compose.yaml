@@ -1,7 +1,7 @@
 services:
-  searxng:
-    container_name: searxng
+  server:
     image: searxng/searxng:latest
+    hostname: searxng-server
     pull_policy: always
     restart: unless-stopped
     ports:
