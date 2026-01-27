@@ -1,2 +1,2 @@
 #!/bin/bash
-docker compose exec comfyui bash
+docker compose exec server bash

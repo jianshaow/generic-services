@@ -1,2 +1,2 @@
 #!/bin/bash
-docker compose exec sd-webui bash
+docker compose exec server bash
