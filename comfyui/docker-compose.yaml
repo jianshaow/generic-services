@@ -15,7 +15,7 @@ services:
     volumes:
       - ~/.ssh:/home/devel/.ssh
       - ${model_cache_path:-~/.cache}:/home/devel/.cache
-      - ${comfyui_root}:/home/devel/comfyanonymous/ComfyUI
+      - ${comfyui_root}:/home/devel/ComfyUI
       - ./install-models.sh:/home/devel/.local/bin/install-models.sh
     ports:
       - 8188:8188
