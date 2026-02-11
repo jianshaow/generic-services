@@ -1,0 +1,12 @@
+services:
+  server:
+    image: grafana/pyroscope:${image_tag:-latest}
+    hostname: pyroscope
+    pull_policy: always
+    restart: unless-stopped
+    volumes:
+      - data:/data
+    ports:
+      - 4040:4040
+volumes:
+  data:
