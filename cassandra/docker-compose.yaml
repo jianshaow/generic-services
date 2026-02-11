@@ -8,7 +8,8 @@ services:
       - HEAP_NEWSIZE=${HEAP_NEWSIZE:-100M}
       - MAX_HEAP_SIZE=${MAX_HEAP_SIZE:-512M}
     volumes:
-      - ${data_path}:/var/lib/cassandra
-      - ${log_path}:/var/log/cassandra
+      - data:/var/lib/cassandra
     ports:
       - 9042:9042
+volumes:
+  data:
