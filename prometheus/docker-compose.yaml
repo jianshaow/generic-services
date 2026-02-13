@@ -1,0 +1,12 @@
+services:
+  server:
+    image: prom/prometheus:${image_tag:-latest}
+    hostname: prometheus
+    pull_policy: always
+    restart: unless-stopped
+    volumes:
+      - data:/prometheus
+    ports:
+      - 9090:9090
+volumes:
+  data:
