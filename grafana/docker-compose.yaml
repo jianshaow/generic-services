@@ -1,6 +1,6 @@
 services:
   server:
-    image: grafana/grafana:${image_tag:-main}
+    image: grafana/grafana:${image_tag:-latest}
     hostname: grafana
     pull_policy: always
     restart: unless-stopped
