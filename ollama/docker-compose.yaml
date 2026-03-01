@@ -6,6 +6,13 @@ services:
     restart: unless-stopped
     volumes:
       - ${model_cache_path:-~/.ollama}:/home/ubuntu/.ollama
+      - ~/.local:/home/ubuntu/.local
+      - ~/.config:/home/ubuntu/.config
+      - ~/.cache:/home/ubuntu/.cache
+      - ~/.nvm:/home/ubuntu/.nvm
+      - ~/.codex:/home/ubuntu/.codex
+      - ~/.claude:/home/ubuntu/.claude
+      - ~/.opencode:/home/ubuntu/.opencode
     environment:
       - https_proxy=${https_proxy:-}
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
