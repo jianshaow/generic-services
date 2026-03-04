@@ -4,8 +4,10 @@ services:
     hostname: ollama-server
     pull_policy: always
     restart: unless-stopped
+    working_dir: /home/ubuntu/workspace
     volumes:
-      - ${model_cache_path:-~/.ollama}:/home/ubuntu/.ollama
+      - ${workspace:-~/source}:/home/ubuntu/workspace
+      - ~/.ollama:/home/ubuntu/.ollama
       - ~/.local:/home/ubuntu/.local
       - ~/.config:/home/ubuntu/.config
       - ~/.cache:/home/ubuntu/.cache
