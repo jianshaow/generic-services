@@ -16,7 +16,7 @@ services:
       - ~/.codex:/home/ubuntu/.codex
       - ~/.claude:/home/ubuntu/.claude
       - ~/.opencode:/home/ubuntu/.opencode
-      - ~/.openclaw:/home/ubuntu/.openclaw
+      - ${openclaw_home:-~/.openclaw}:/home/ubuntu/.openclaw
     environment:
       - https_proxy=${https_proxy:-}
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
