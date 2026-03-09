@@ -1,0 +1,17 @@
+services:
+  gateway:
+    image: jianshao/sandbox-base:${image_tag:-latest}
+    hostname: openclaw-gateway
+    pull_policy: always
+    restart: unless-stopped
+    working_dir: /home/ubuntu/workspace
+    volumes:
+      - ${workspace:-~/workspace}:/home/ubuntu/workspace
+      - ~/.nvm:/home/ubuntu/.nvm
+      - ~/.local:/home/ubuntu/.local
+      - ${openclaw_home:-~/.openclaw}:/home/ubuntu/.openclaw
+    environment:
+      - https_proxy=${https_proxy:-}
+      - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
+    ports:
+      - 11434:11434
