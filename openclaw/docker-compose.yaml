@@ -4,14 +4,15 @@ services:
     hostname: openclaw-gateway
     pull_policy: always
     restart: unless-stopped
-    working_dir: /home/ubuntu/workspace
+    working_dir: /home/devel/workspace
+    command: ["openclaw", "gateway", "run", "--bind", "lan"]
+    init: true
     volumes:
-      - ${workspace:-~/workspace}:/home/ubuntu/workspace
-      - ~/.nvm:/home/ubuntu/.nvm
-      - ~/.local:/home/ubuntu/.local
-      - ${openclaw_home:-~/.openclaw}:/home/ubuntu/.openclaw
+      - ${workspace:-~/workspace}:/home/devel/workspace
+      - ~/.nvm:/home/devel/.nvm
+      - ~/.local:/home/devel/.local
+      - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
     environment:
       - https_proxy=${https_proxy:-}
-      - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
     ports:
-      - 11434:11434
+      - 18789:18789
