@@ -5,7 +5,7 @@ services:
     pull_policy: always
     restart: unless-stopped
     working_dir: /home/devel/workspace
-    command: ["openclaw", "gateway", "run", "--bind", "lan"]
+    command: ["openclaw", "gateway", "--bind", "lan"]
     init: true
     volumes:
       - ${workspace:-~/workspace}:/home/devel/workspace
