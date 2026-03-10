@@ -4,6 +4,7 @@ services:
     hostname: jaeger
     pull_policy: always
     restart: unless-stopped
+    init: true
     environment:
       - LOG_LEVEL=debug
     ports:

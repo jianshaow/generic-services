@@ -11,6 +11,7 @@ services:
       - 0.0.0.0
       - --set
       - web_password=${web_password}
+    init: true
     ports:
       - 48080:8080
       - 48081:8081

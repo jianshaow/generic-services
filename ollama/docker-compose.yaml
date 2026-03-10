@@ -5,6 +5,7 @@ services:
     pull_policy: always
     restart: unless-stopped
     working_dir: /home/ubuntu/workspace
+    init: true
     volumes:
       - ${workspace:-~/workspace}:/home/ubuntu/workspace
       - ~/.ollama:/home/ubuntu/.ollama

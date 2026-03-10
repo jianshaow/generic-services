@@ -4,6 +4,7 @@ services:
     hostname: prometheus
     pull_policy: always
     restart: unless-stopped
+    init: true
     volumes:
       - data:/prometheus
     ports:

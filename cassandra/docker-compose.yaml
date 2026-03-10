@@ -4,6 +4,7 @@ services:
     hostname: cassandra
     pull_policy: always
     restart: unless-stopped
+    init: true
     environment:
       - HEAP_NEWSIZE=${HEAP_NEWSIZE:-100M}
       - MAX_HEAP_SIZE=${MAX_HEAP_SIZE:-512M}

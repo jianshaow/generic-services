@@ -4,6 +4,7 @@ services:
     hostname: searxng-server
     pull_policy: always
     restart: unless-stopped
+    init: true
     ports:
       - 8080:8080
     volumes:

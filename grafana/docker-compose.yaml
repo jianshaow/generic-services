@@ -4,6 +4,7 @@ services:
     hostname: grafana
     pull_policy: always
     restart: unless-stopped
+    init: true
     environment:
       - GF_PLUGINS_PREINSTALL_SYNC=grafana-pyroscope-app
       - GF_AUTH_ANONYMOUS_ENABLED=true

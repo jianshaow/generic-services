@@ -4,6 +4,7 @@ services:
     hostname: redis-server
     pull_policy: always
     restart: unless-stopped
+    init: true
     volumes:
       - data:/data
     ports:
