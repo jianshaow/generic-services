@@ -16,3 +16,5 @@ services:
       - https_proxy=${https_proxy:-}
     ports:
       - 18789:18789
+    extra_hosts:
+      - host.docker.internal:host-gateway
