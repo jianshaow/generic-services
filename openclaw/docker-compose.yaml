@@ -8,12 +8,12 @@ services:
     command: ["openclaw", "gateway", "--bind", "lan"]
     init: true
     volumes:
-      - ${workspace:-~/workspace}:/home/devel/workspace
       - ~/.nvm:/home/devel/.nvm
-      - ~/.local:/home/devel/.local
+      - ${workspace:-~/workspace}:/home/devel/workspace
       - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
     environment:
       - https_proxy=${https_proxy:-}
+      - http_proxy=${http_proxy:-}
     ports:
       - 18789:18789
     extra_hosts:
