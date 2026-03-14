@@ -20,6 +20,7 @@ services:
       - ${openclaw_home:-~/.ollama_openclaw}:/home/ubuntu/.openclaw
     environment:
       - https_proxy=${https_proxy:-}
+      - EXTRA_PATH=/home/ubuntu/.local/bin
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
     ports:
       - 11434:11434

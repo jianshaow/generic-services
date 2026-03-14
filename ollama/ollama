@@ -1,2 +1,2 @@
 #!/bin/bash
-docker compose exec server ollama $*
+docker compose exec server docker-entrypoint.sh ollama $*
