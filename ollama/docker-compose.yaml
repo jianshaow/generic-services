@@ -9,18 +9,8 @@ services:
     volumes:
       - ${workspace:-~/workspace}:/home/ubuntu/workspace
       - ~/.ollama:/home/ubuntu/.ollama
-      - ~/.local:/home/ubuntu/.local
-      - ~/.config:/home/ubuntu/.config
-      - ~/.cache:/home/ubuntu/.cache
-      - ~/.nvm:/home/ubuntu/.nvm
-      - ~/.pi:/home/ubuntu/.pi
-      - ~/.codex:/home/ubuntu/.codex
-      - ~/.claude:/home/ubuntu/.claude
-      - ~/.opencode:/home/ubuntu/.opencode
-      - ${openclaw_home:-~/.ollama_openclaw}:/home/ubuntu/.openclaw
     environment:
       - https_proxy=${https_proxy:-}
-      - EXTRA_PATH=/home/ubuntu/.local/bin
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
     ports:
       - 11434:11434
