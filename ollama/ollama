@@ -1,15 +1,2 @@
 #!/bin/bash
-docker run --rm -it --network=container:openclaw-gateway-1 \
-           -e OLLAMA_HOST=host.docker.internal \
-           -e EXTRA_PATH=/home/ubuntu/.local/bin \
-           -v ~/.ollama:/home/ubuntu/.ollama \
-           -v ~/.local:/home/ubuntu/.local \
-           -v ~/.config:/home/ubuntu/.config \
-           -v ~/.cache:/home/ubuntu/.cache \
-           -v ~/.nvm:/home/ubuntu/.nvm \
-           -v ~/.pi:/home/ubuntu/.pi \
-           -v ~/.codex:/home/ubuntu/.codex \
-           -v ~/.claude:/home/ubuntu/.claude \
-           -v ~/.opencode:/home/ubuntu/.opencode \
-           -v ~/.openclaw:/home/ubuntu/.openclaw \
-           jianshao/ollama ollama $*
+docker compose exec server docker-entrypoint.sh ollama $*
