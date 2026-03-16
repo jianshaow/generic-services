@@ -10,5 +10,6 @@ docker run --rm -it --network=container:openclaw-gateway-1 \
            -v ~/.pi:/home/ubuntu/.pi \
            -v ~/.codex:/home/ubuntu/.codex \
            -v ~/.claude:/home/ubuntu/.claude \
+           -v ~/.opencode:/home/ubuntu/.opencode \
            -v ~/.openclaw:/home/ubuntu/.openclaw \
            jianshao/ollama ollama $*
