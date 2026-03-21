@@ -17,7 +17,7 @@ services:
       - ~/.codex:/home/ubuntu/.codex
       - ~/.claude:/home/ubuntu/.claude
       - ~/.opencode:/home/ubuntu/.opencode
-      - ~/.openclaw:/home/ubuntu/.openclaw
+      - ~/.ollama_openclaw:/home/ubuntu/.openclaw
     environment:
       - https_proxy=${https_proxy:-}
       - EXTRA_PATH=/home/ubuntu/.local/bin
