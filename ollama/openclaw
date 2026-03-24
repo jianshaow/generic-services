@@ -1,6 +1,8 @@
 #!/bin/bash
 docker run --rm -it --network=container:ollama-server-1 \
-           -v ~/.ollama_openclaw:/home/devel/.openclaw \
-           -v ~/.ollama:/home/devel/.ollama \
-           -v ~/.nvm:/home/devel/.nvm \
+           -e HOME=/home/ubuntu --workdir /home/ubuntu \
+           -v ~/.ollama_openclaw:/home/ubuntu/.openclaw \
+           -v ~/.ollama:/home/ubuntu/.ollama \
+           -v ~/.config:/home/ubuntu/.config \
+           -v ~/.nvm:/home/ubuntu/.nvm \
            jianshao/sandbox-base openclaw $*
