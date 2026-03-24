@@ -1,6 +1,6 @@
 #!/bin/bash
 docker run --rm -it --network=container:ollama-server-1 \
-           -e HOME=/home/ubuntu --workdir /home/ubuntu \
+           --workdir /home/ubuntu -e HOME=/home/ubuntu \
            -v ~/.ollama_openclaw:/home/ubuntu/.openclaw \
            -v ~/.ollama:/home/ubuntu/.ollama \
            -v ~/.config:/home/ubuntu/.config \
