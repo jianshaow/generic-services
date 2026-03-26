@@ -13,6 +13,7 @@ services:
       - ~/.config:/home/ubuntu/.config
       - ~/.cache:/home/ubuntu/.cache
       - ~/.nvm:/home/ubuntu/.nvm
+      - ~/.npm:/home/ubuntu/.npm
       - ~/.pi:/home/ubuntu/.pi
       - ~/.codex:/home/ubuntu/.codex
       - ~/.claude:/home/ubuntu/.claude

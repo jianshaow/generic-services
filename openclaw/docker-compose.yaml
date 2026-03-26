@@ -9,6 +9,7 @@ services:
     init: true
     volumes:
       - ~/.nvm:/home/devel/.nvm
+      - ~/.npm:/home/devel/.npm
       - ${workspace:-~/workspace}:/home/devel/workspace
       - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
     environment:
