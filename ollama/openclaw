@@ -5,4 +5,5 @@ docker run --rm -it --network=container:ollama-server-1 \
            -v ~/.ollama:/home/ubuntu/.ollama \
            -v ~/.config:/home/ubuntu/.config \
            -v ~/.nvm:/home/ubuntu/.nvm \
+           -v ~/.npm:/home/ubuntu/.npm \
            jianshao/sandbox-base openclaw $*
