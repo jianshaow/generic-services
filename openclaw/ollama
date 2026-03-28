@@ -1,8 +1,2 @@
 #!/bin/bash
-docker run --rm -it --network=container:openclaw-gateway-1 \
-           -e OLLAMA_HOST=host.docker.internal \
-           -v ~/.openclaw:/home/ubuntu/.openclaw \
-           -v ~/.ollama:/home/ubuntu/.ollama \
-           -v ~/.nvm:/home/ubuntu/.nvm \
-           -v ~/.npm:/home/ubuntu/.npm \
-           jianshao/ollama ollama $*
+docker compose exec ollama docker-entrypoint.sh ollama $*

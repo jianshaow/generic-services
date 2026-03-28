@@ -1,7 +1,14 @@
 services:
-  gateway:
+  pause:
     image: jianshao/sandbox-base:${image_tag:-latest}
     hostname: openclaw-gateway
+    restart: always
+    command: ["sleep", "infinity"]
+    init: true
+    ports:
+      - 18789:18789
+  gateway:
+    image: jianshao/sandbox-base:${image_tag:-latest}
     pull_policy: always
     restart: unless-stopped
     working_dir: /home/devel/workspace
@@ -15,7 +22,22 @@ services:
     environment:
       - https_proxy=${https_proxy:-}
       - http_proxy=${http_proxy:-}
-    ports:
-      - 18789:18789
-    extra_hosts:
-      - host.docker.internal:host-gateway
+    network_mode: service:pause
+    depends_on:
+      - pause
+  ollama:
+    image: jianshao/sandbox-base:${image_tag:-latest}
+    pull_policy: always
+    restart: unless-stopped
+    command: ["ollama", "serve"]
+    init: true
+    volumes:
+      - ~/.nvm:/home/devel/.nvm
+      - ~/.ollama:/home/devel/.ollama
+      - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
+    environment:
+      - https_proxy=${https_proxy:-}
+      - http_proxy=${http_proxy:-}
+    network_mode: service:pause
+    depends_on:
+      - pause
