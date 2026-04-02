@@ -17,6 +17,8 @@ services:
     volumes:
       - ~/.nvm:/home/devel/.nvm
       - ~/.npm:/home/devel/.npm
+      - ~/.cache:/home/devel/.cache
+      - ~/.config:/home/devel/.config
       - ${workspace:-~/workspace}:/home/devel/workspace
       - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
     environment:
