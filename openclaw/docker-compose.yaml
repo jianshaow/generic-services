@@ -24,6 +24,8 @@ services:
     environment:
       - https_proxy=${https_proxy:-}
       - http_proxy=${http_proxy:-}
+      - NODE_COMPILE_CACHE=/home/devel/.cache/node-compile-cache
+      - OPENCLAW_NO_RESPAWN=${openclaw_no_respawn:-1}
     network_mode: service:pause
     depends_on:
       - pause
