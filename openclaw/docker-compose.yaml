@@ -11,6 +11,11 @@ services:
       - ~/.cache:/home/devel/.cache
       - ~/.config:/home/devel/.config
       - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
+    environment:
+      - https_proxy=${https_proxy:-}
+      - http_proxy=${http_proxy:-}
+      - NODE_COMPILE_CACHE=/home/devel/.cache/node-compile-cache
+      - OPENCLAW_NO_RESPAWN=${openclaw_no_respawn:-1}
     ports:
       - 18789:18789
   gateway:
