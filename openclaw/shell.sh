@@ -1,2 +1,2 @@
 #!/bin/bash
-docker compose exec gateway docker-entrypoint.sh bash
+docker compose exec pause docker-entrypoint.sh bash

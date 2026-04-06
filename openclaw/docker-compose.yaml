@@ -5,13 +5,18 @@ services:
     restart: always
     command: ["sleep", "infinity"]
     init: true
+    volumes:
+      - ~/.nvm:/home/devel/.nvm
+      - ~/.npm:/home/devel/.npm
+      - ~/.cache:/home/devel/.cache
+      - ~/.config:/home/devel/.config
+      - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
     ports:
       - 18789:18789
   gateway:
     image: jianshao/sandbox-base:${image_tag:-latest}
     pull_policy: always
     restart: unless-stopped
-    working_dir: /home/devel/workspace
     command: ["openclaw", "gateway", "--bind", "lan"]
     init: true
     volumes:
@@ -19,7 +24,6 @@ services:
       - ~/.npm:/home/devel/.npm
       - ~/.cache:/home/devel/.cache
       - ~/.config:/home/devel/.config
-      - ${workspace:-~/workspace}:/home/devel/workspace
       - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
     environment:
       - https_proxy=${https_proxy:-}
