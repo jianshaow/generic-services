@@ -15,6 +15,7 @@ services:
       - ~/.pi:/home/ubuntu/.pi
       - ~/.codex:/home/ubuntu/.codex
       - ~/.claude:/home/ubuntu/.claude
+      - ~/.factory:/home/ubuntu/.factory
       - ~/.opencode:/home/ubuntu/.opencode
       - ~/.ollama_openclaw:/home/ubuntu/.openclaw
     environment:
