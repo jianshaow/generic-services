@@ -7,6 +7,7 @@ services:
     command: 
       - python
       - main.py
+      - --enable-dynamic-vram
       - --enable-manager
       - --listen
       - 0.0.0.0
@@ -17,6 +18,6 @@ services:
       - ~/.ssh:/home/devel/.ssh
       - ${model_cache_path:-~/.cache}:/home/devel/.cache
       - ${comfyui_root}:/home/devel/ComfyUI
-      - ./install-models.sh:/home/devel/.local/bin/install-models.sh
+      - ./install-models.sh:/usr/local/bin/install-models.sh
     ports:
       - 8188:8188
