@@ -4,14 +4,13 @@ services:
     hostname: comfyui-server
     pull_policy: always
     restart: unless-stopped
-    command: 
+    init: true
+    command:
       - python
       - main.py
-      - --enable-dynamic-vram
       - --enable-manager
       - --listen
       - 0.0.0.0
-    init: true
     environment:
       - https_proxy=${https_proxy:-}
     volumes:
