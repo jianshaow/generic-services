@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$comfyui_models_dir" ]; then
-    comfyui_models_dir=/home/devel/ComfyUI/ComfyUI/models
+    comfyui_models_dir=/home/devel/ComfyUI/models
 fi
 
 hf_repo_id=$1
