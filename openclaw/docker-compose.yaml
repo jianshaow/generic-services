@@ -2,7 +2,8 @@ services:
   pause:
     image: jianshao/sandbox-base:${image_tag:-latest}
     hostname: openclaw-gateway
-    restart: always
+    pull_policy: always
+    restart: unless-stopped
     command: ["sleep", "infinity"]
     init: true
     volumes:
