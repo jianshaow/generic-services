@@ -16,6 +16,7 @@ services:
       - ~/.codex:/home/ubuntu/.codex
       - ~/.claude:/home/ubuntu/.claude
       - ~/.factory:/home/ubuntu/.factory
+      - ~/.copilot:/home/ubuntu/.copilot
       - ~/.opencode:/home/ubuntu/.opencode
       - ~/.ollama_openclaw:/home/ubuntu/.openclaw
     environment:
