@@ -23,5 +23,6 @@ services:
       - https_proxy=${https_proxy:-}
       - EXTRA_PATH=/home/ubuntu/.local/bin
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
+      - OLLAMA_VULKAN=${OLLAMA_VULKAN:-0}
     ports:
       - 11434:11434

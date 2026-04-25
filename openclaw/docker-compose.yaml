@@ -52,6 +52,7 @@ services:
     environment:
       - https_proxy=${https_proxy:-}
       - http_proxy=${http_proxy:-}
+      - OLLAMA_VULKAN=${OLLAMA_VULKAN:-1}
     network_mode: service:pause
     depends_on:
       - pause
