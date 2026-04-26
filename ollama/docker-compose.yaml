@@ -1,6 +1,6 @@
 services:
   server:
-    image: jianshao/ollama:${ollama_image_tag}
+    image: jianshao/ollama:${ollama_image_tag-latest}
     hostname: ollama-server
     pull_policy: always
     restart: unless-stopped
