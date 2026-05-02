@@ -1,26 +1,7 @@
 services:
-  pause:
-    image: jianshao/sandbox-base:${image_tag:-latest}
-    hostname: openclaw-gateway
-    pull_policy: always
-    restart: unless-stopped
-    command: ["sleep", "infinity"]
-    init: true
-    volumes:
-      - ~/.nvm:/home/devel/.nvm
-      - ~/.npm:/home/devel/.npm
-      - ~/.cache:/home/devel/.cache
-      - ~/.config:/home/devel/.config
-      - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
-    environment:
-      - https_proxy=${https_proxy:-}
-      - http_proxy=${http_proxy:-}
-      - NODE_COMPILE_CACHE=/home/devel/.cache/node-compile-cache
-      - OPENCLAW_NO_RESPAWN=${openclaw_no_respawn:-1}
-    ports:
-      - 18789:18789
   gateway:
     image: jianshao/sandbox-base:${image_tag:-latest}
+    hostname: openclaw-gateway
     pull_policy: always
     restart: unless-stopped
     command: ["openclaw", "gateway", "--bind", "lan", "run"]
@@ -36,23 +17,5 @@ services:
       - http_proxy=${http_proxy:-}
       - NODE_COMPILE_CACHE=/home/devel/.cache/node-compile-cache
       - OPENCLAW_NO_RESPAWN=${openclaw_no_respawn:-1}
-    network_mode: service:pause
-    depends_on:
-      - pause
-  ollama:
-    image: jianshao/sandbox-base:${image_tag:-latest}
-    pull_policy: always
-    restart: unless-stopped
-    command: ["ollama", "serve"]
-    init: true
-    volumes:
-      - ~/.nvm:/home/devel/.nvm
-      - ~/.ollama:/home/devel/.ollama
-      - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
-    environment:
-      - https_proxy=${https_proxy:-}
-      - http_proxy=${http_proxy:-}
-      - OLLAMA_VULKAN=${OLLAMA_VULKAN:-1}
-    network_mode: service:pause
-    depends_on:
-      - pause
+    ports:
+      - 18789:18789
