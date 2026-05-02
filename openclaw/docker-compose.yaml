@@ -23,7 +23,7 @@ services:
     image: jianshao/sandbox-base:${image_tag:-latest}
     pull_policy: always
     restart: unless-stopped
-    command: ["openclaw", "gateway", "--bind", "lan"]
+    command: ["openclaw", "gateway", "--bind", "lan", "run"]
     init: true
     volumes:
       - ~/.nvm:/home/devel/.nvm
