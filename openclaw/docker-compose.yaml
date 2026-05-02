@@ -11,6 +11,7 @@ services:
       - ~/.npm:/home/devel/.npm
       - ~/.cache:/home/devel/.cache
       - ~/.config:/home/devel/.config
+      - ~/openclaw_data:/home/devel/data
       - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
     environment:
       - https_proxy=${https_proxy:-}
