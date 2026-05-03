@@ -1,2 +1,2 @@
 #!/bin/bash
-docker compose run --rm --pull never gateway openclaw $*
+docker compose run --rm --pull never server openclaw $*
