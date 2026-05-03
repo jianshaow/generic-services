@@ -20,3 +20,5 @@ services:
       - OPENCLAW_NO_RESPAWN=${openclaw_no_respawn:-1}
     ports:
       - 18789:18789
+    extra_hosts:
+      - host.docker.internal:host-gateway
