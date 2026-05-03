@@ -1,2 +1,2 @@
 #!/bin/bash
-docker compose exec gateway docker-entrypoint.sh openclaw $*
+docker compose run --rm --pull never gateway openclaw $*
