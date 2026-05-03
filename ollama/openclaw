@@ -1,9 +1,2 @@
 #!/bin/bash
-docker run --rm -it --network=container:ollama-server-1 \
-           --workdir /home/ubuntu -e HOME=/home/ubuntu \
-           -v ~/.ollama_openclaw:/home/ubuntu/.openclaw \
-           -v ~/.ollama:/home/ubuntu/.ollama \
-           -v ~/.config:/home/ubuntu/.config \
-           -v ~/.nvm:/home/ubuntu/.nvm \
-           -v ~/.npm:/home/ubuntu/.npm \
-           jianshao/sandbox-base openclaw $*
+docker compose run --rm --pull never gateway openclaw $*
