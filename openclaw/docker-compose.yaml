@@ -1,18 +1,19 @@
 services:
-  gateway:
+  pause:
     image: jianshao/sandbox-base:${image_tag:-latest}
+    container_name: openclaw-pause
     hostname: openclaw-gateway
     pull_policy: always
     restart: unless-stopped
-    command: ["openclaw", "gateway", "--bind", "lan", "run"]
     init: true
+    command: ["sleep", "infinity"]
     volumes:
       - ~/.nvm:/home/devel/.nvm
       - ~/.npm:/home/devel/.npm
       - ~/.cache:/home/devel/.cache
       - ~/.config:/home/devel/.config
-      - ${openclaw_data:-~/.openclaw_data}:/home/devel/data
       - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
+      - data:/home/devel/data
     environment:
       - https_proxy=${https_proxy:-}
       - http_proxy=${http_proxy:-}
@@ -22,3 +23,29 @@ services:
       - 18789:18789
     extra_hosts:
       - host.docker.internal:host-gateway
+    ipc: shareable
+  gateway:
+    image: jianshao/sandbox-base:${image_tag:-latest}
+    pull_policy: always
+    restart: unless-stopped
+    init: true
+    command: ["openclaw", "gateway", "--bind", "lan", "run"]
+    volumes:
+      - ~/.nvm:/home/devel/.nvm
+      - ~/.npm:/home/devel/.npm
+      - ~/.cache:/home/devel/.cache
+      - ~/.config:/home/devel/.config
+      - ${openclaw_home:-~/.openclaw}:/home/devel/.openclaw
+      - data:/home/devel/data
+    environment:
+      - https_proxy=${https_proxy:-}
+      - http_proxy=${http_proxy:-}
+      - NODE_COMPILE_CACHE=/home/devel/.cache/node-compile-cache
+      - OPENCLAW_NO_RESPAWN=${openclaw_no_respawn:-1}
+    network_mode: service:pause
+    pid: service:pause
+    ipc: service:pause
+    depends_on:
+      - pause
+volumes:
+  data:
