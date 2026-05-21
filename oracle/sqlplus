@@ -1,2 +1,2 @@
 #!/bin/bash
-docker compose exec server sqlplus $*
+docker compose exec --workdir /opt/oracle server sqlplus $*
