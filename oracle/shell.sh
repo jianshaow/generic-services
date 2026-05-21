@@ -1,0 +1,2 @@
+#!/bin/bash
+docker compose exec --workdir /opt/oracle server bash $*
