@@ -11,6 +11,7 @@ services:
       - APP_USER=${APP_USER:-app}
       - APP_USER_PASSWORD=${APP_USER_PASSWORD:-app}
     volumes:
+      - ${SCRIPTS_DIR:-./scripts}:/opt/oracle/scripts
       - data:/opt/oracle/oradata
     ports:
       - 1521:1521
