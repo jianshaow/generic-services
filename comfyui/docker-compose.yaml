@@ -1,6 +1,6 @@
 services:
   server:
-    image: jianshao/comfyui-rt:${image_tag}
+    image: jianshao/comfyui-rt:${image_tag:-latest}
     hostname: comfyui-server
     pull_policy: always
     restart: unless-stopped
