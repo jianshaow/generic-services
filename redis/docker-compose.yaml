@@ -5,6 +5,24 @@ services:
     pull_policy: always
     restart: unless-stopped
     init: true
+    environment:
+      - REDIS_MODE=${REDIS_MODE:-standalone}
+    entrypoint: >
+      sh -c "
+      if [ \"$$REDIS_MODE\" = \"cluster\" ]; then
+          echo '=== [INFO] Starting in CLUSTER mode ==='
+          valkey-server --port 6379 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes &
+          
+          sleep 1;
+          echo '=== [INFO] Assigning slots (if not already assigned) ==='
+          valkey-cli -p 6379 cluster addslots \$(seq 0 16383) 2>/dev/null || true
+          
+          wait
+      else
+          echo '=== [INFO] Starting in STANDALONE mode ==='
+          exec valkey-server --port 6379 --appendonly yes
+      fi
+      "
     volumes:
       - data:/data
     ports:
