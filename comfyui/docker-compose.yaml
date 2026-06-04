@@ -18,6 +18,7 @@ services:
       - ~/.ssh:/home/devel/.ssh
       - ${model_cache_path:-~/.cache}:/home/devel/.cache
       - ${comfyui_root}:/home/devel/ComfyUI
+      - ${workflow_templates}:/home/devel/workflow_templates
       - ./install-models.sh:/usr/local/bin/install-models.sh
     ports:
       - 8188:8188
