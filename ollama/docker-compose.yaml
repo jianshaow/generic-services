@@ -8,14 +8,13 @@ services:
     volumes:
       - ~/.ollama:/home/ubuntu/.ollama
       - ~/.local:/home/ubuntu/.local
-      - ~/.config:/home/ubuntu/.config
       - ~/.cache:/home/ubuntu/.cache
+      - ~/.config:/home/ubuntu/.config
       - ~/.nvm:/home/ubuntu/.nvm
       - ~/.copilot:/home/ubuntu/.copilot
       - ~/.opencode:/home/ubuntu/.opencode
     environment:
       - https_proxy=${https_proxy:-}
-      - EXTRA_PATH=/home/ubuntu/.local/bin
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
       - OLLAMA_VULKAN=${OLLAMA_VULKAN:-0}
     ports:
