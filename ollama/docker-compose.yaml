@@ -14,7 +14,9 @@ services:
       - ~/.copilot:/home/ubuntu/.copilot
       - ~/.opencode:/home/ubuntu/.opencode
     environment:
-      - https_proxy=${https_proxy:-}
+      - https_proxy
+      - http_proxy
+      - no_proxy
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
       - OLLAMA_VULKAN=${OLLAMA_VULKAN:-0}
     ports:

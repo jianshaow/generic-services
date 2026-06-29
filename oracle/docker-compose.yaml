@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     init: true
     environment:
-      - ORACLE_DATABASE=${ORACLE_DATABASE:-}
+      - ORACLE_DATABASE
       - ORACLE_PASSWORD=${ORACLE_PASSWORD:-oracle}
       - APP_USER=${APP_USER:-app}
       - APP_USER_PASSWORD=${APP_USER_PASSWORD:-app}

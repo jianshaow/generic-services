@@ -12,7 +12,9 @@ services:
       - --listen
       - 0.0.0.0
     environment:
-      - https_proxy=${https_proxy:-}
+      - https_proxy
+      - http_proxy
+      - no_proxy
       - HF_XET_HIGH_PERFORMANCE=${HF_XET_HIGH_PERFORMANCE:-1}
     volumes:
       - ~/.ssh:/home/devel/.ssh
