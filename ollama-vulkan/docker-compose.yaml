@@ -1,0 +1,31 @@
+services:
+  server:
+    image: jianshao/ollama:${ollama_image_tag-latest}
+    hostname: ollama-server
+    pull_policy: always
+    restart: unless-stopped
+    init: true
+    devices:
+      - /dev/dxg
+    volumes:
+      - /usr/lib/wsl:/usr/lib/wsl
+      - /usr/share/vulkan/icd.d:/usr/share/vulkan/icd.d:ro
+      - /usr/share/drirc.d:/usr/share/drirc.d:ro
+      - /usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu
+      - ~/.ollama:/home/ubuntu/.ollama
+      - ~/.local:/home/ubuntu/.local
+      - ~/.cache:/home/ubuntu/.cache
+      - ~/.config:/home/ubuntu/.config
+      - ~/.nvm:/home/ubuntu/.nvm
+      - ~/.copilot:/home/ubuntu/.copilot
+      - ~/.opencode:/home/ubuntu/.opencode
+    environment:
+      - https_proxy
+      - http_proxy
+      - no_proxy
+      - LD_LIBRARY_PATH=/usr/lib/wsl/lib
+      - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
+      - OLLAMA_IGPU_ENABLE=1
+      - OLLAMA_VULKAN=1
+    ports:
+      - 11434:11434

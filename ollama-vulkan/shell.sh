@@ -1,0 +1,2 @@
+#!/bin/bash
+docker compose exec server docker-entrypoint.sh bash
