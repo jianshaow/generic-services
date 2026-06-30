@@ -1,6 +1,6 @@
 services:
   server:
-    image: mitmproxy/mitmproxy:${image_ver}
+    image: mitmproxy/mitmproxy:${image_ver:-12}
     hostname: mitmproxy-server
     pull_policy: always
     restart: unless-stopped
