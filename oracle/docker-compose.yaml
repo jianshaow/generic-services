@@ -8,10 +8,11 @@ services:
     environment:
       - ORACLE_DATABASE
       - ORACLE_PASSWORD=${ORACLE_PASSWORD:-oracle}
-      - APP_USER=${APP_USER:-app}
-      - APP_USER_PASSWORD=${APP_USER_PASSWORD:-app}
+      - APP_USER
+      - APP_USER_PASSWORD
     volumes:
       - ${SCRIPTS_DIR:-./scripts}:/opt/oracle/scripts
+      - ./init-sid.sh:/opt/oracle/scripts/startup/init-sid.sh
       - data:/opt/oracle/oradata
     ports:
       - 1521:1521
