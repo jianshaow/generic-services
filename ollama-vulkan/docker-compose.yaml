@@ -24,6 +24,7 @@ services:
       - http_proxy
       - no_proxy
       - LD_LIBRARY_PATH=/usr/lib/wsl/lib
+      - CUDA_VISIBLE_DEVICES=-1
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
       - OLLAMA_IGPU_ENABLE=1
       - OLLAMA_VULKAN=1
