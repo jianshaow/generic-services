@@ -6,13 +6,13 @@ services:
     restart: unless-stopped
     init: true
     volumes:
-      - ~/.ollama:/home/ubuntu/.ollama
-      - ~/.local:/home/ubuntu/.local
-      - ~/.cache:/home/ubuntu/.cache
-      - ~/.config:/home/ubuntu/.config
-      - ~/.nvm:/home/ubuntu/.nvm
-      - ~/.copilot:/home/ubuntu/.copilot
-      - ~/.opencode:/home/ubuntu/.opencode
+      - ~/.ollama:/home/devel/.ollama
+      - ~/.local:/home/devel/.local
+      - ~/.cache:/home/devel/.cache
+      - ~/.config:/home/devel/.config
+      - ~/.nvm:/home/devel/.nvm
+      - ~/.copilot:/home/devel/.copilot
+      - ~/.opencode:/home/devel/.opencode
     environment:
       - https_proxy
       - http_proxy

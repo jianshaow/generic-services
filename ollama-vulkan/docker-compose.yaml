@@ -12,13 +12,13 @@ services:
       - /usr/share/vulkan/icd.d:/usr/share/vulkan/icd.d:ro
       - /usr/share/drirc.d:/usr/share/drirc.d:ro
       - /usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu
-      - ~/.ollama:/home/ubuntu/.ollama
-      - ~/.local:/home/ubuntu/.local
-      - ~/.cache:/home/ubuntu/.cache
-      - ~/.config:/home/ubuntu/.config
-      - ~/.nvm:/home/ubuntu/.nvm
-      - ~/.copilot:/home/ubuntu/.copilot
-      - ~/.opencode:/home/ubuntu/.opencode
+      - ~/.ollama:/home/devel/.ollama
+      - ~/.local:/home/devel/.local
+      - ~/.cache:/home/devel/.cache
+      - ~/.config:/home/devel/.config
+      - ~/.nvm:/home/devel/.nvm
+      - ~/.copilot:/home/devel/.copilot
+      - ~/.opencode:/home/devel/.opencode
     environment:
       - https_proxy
       - http_proxy

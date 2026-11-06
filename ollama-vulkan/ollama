@@ -1,10 +1,10 @@
 #!/bin/bash
 docker run --rm -it --network host \
-       -v ~/.ollama:/home/ubuntu/.ollama \
-       -v ~/.local:/home/ubuntu/.local \
-       -v ~/.cache:/home/ubuntu/.cache \
-       -v ~/.config:/home/ubuntu/.config \
-       -v ~/.nvm:/home/ubuntu/.nvm \
-       -v ~/.copilot:/home/ubuntu/.copilot \
-       -v ~/.opencode:/home/ubuntu/.opencode \
+       -v ~/.ollama:/home/devel/.ollama \
+       -v ~/.local:/home/devel/.local \
+       -v ~/.cache:/home/devel/.cache \
+       -v ~/.config:/home/devel/.config \
+       -v ~/.nvm:/home/devel/.nvm \
+       -v ~/.copilot:/home/devel/.copilot \
+       -v ~/.opencode:/home/devel/.opencode \
        jianshao/ollama ollama $*
