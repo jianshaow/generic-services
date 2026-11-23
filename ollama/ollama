@@ -5,6 +5,7 @@ docker run --rm -it --network host \
        -v ~/.cache:/home/devel/.cache \
        -v ~/.config:/home/devel/.config \
        -v ~/.nvm:/home/devel/.nvm \
+       -v ~/.hermes:/home/devel/.hermes \
        -v ~/.copilot:/home/devel/.copilot \
        -v ~/.opencode:/home/devel/.opencode \
        jianshao/ollama ollama $*

@@ -11,6 +11,7 @@ services:
       - ~/.cache:/home/devel/.cache
       - ~/.config:/home/devel/.config
       - ~/.nvm:/home/devel/.nvm
+      - ~/.hermes:/home/devel/.hermes
       - ~/.copilot:/home/devel/.copilot
       - ~/.opencode:/home/devel/.opencode
     environment:
