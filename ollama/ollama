@@ -1,4 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
+
+if [ -f .env ]; then
+  set -a
+  source .env
+  set +a
+fi
+
 docker run --rm -it --network host \
        -e https_proxy -e http_proxy -e no_proxy \
        -v ~/.ollama:/home/devel/.ollama \
