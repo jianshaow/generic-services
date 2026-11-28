@@ -18,6 +18,8 @@ services:
       - https_proxy
       - http_proxy
       - no_proxy
+      - OLLAMA_CONTEXT_LENGTH
+      - OLLAMA_KV_CACHE_TYPE
       - OLLAMA_FLASH_ATTENTION=${OLLAMA_FLASH_ATTENTION:-1}
       - OLLAMA_VULKAN=${OLLAMA_VULKAN:-0}
     ports:
